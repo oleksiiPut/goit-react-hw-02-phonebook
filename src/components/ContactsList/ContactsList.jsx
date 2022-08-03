@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Filter from '../Filter/Filter';
 import { Wrapper, H2, Ul, Li, P, Span, ListBtn } from './ContactsList.styled';
 
@@ -20,5 +21,10 @@ const ContactsList = ({ contacts, filter, onChange, onDelete }) => (
     </Ul>
   </Wrapper>
 );
+
+ContactsList.propTypes = {
+  contacts: PropTypes.arrayOf(PropTypes.string).isRequired,
+  filter: PropTypes.string.isRequired,
+};
 
 export default ContactsList;
