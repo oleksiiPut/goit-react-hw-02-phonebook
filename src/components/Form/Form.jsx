@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
-import { FormWrapper, H2, FormDiv, FormBtn, Label, Input } from './Form.styled';
+import { FormWrapper, FormDiv, FormBtn, Label, Input } from './Form.styled';
 
 class Form extends Component {
   state = {
@@ -30,7 +29,6 @@ class Form extends Component {
   render() {
     return (
       <FormWrapper>
-        <H2>Phonebook</H2>
         <FormDiv onSubmit={this.onSubmitForm}>
           <Label htmlFor={this.nameInputId}>
             Name
@@ -64,10 +62,5 @@ class Form extends Component {
     );
   }
 }
-
-Form.propTypes = {
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
-};
 
 export default Form;

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import { nanoid } from 'nanoid';
 import Form from './Form/Form';
+import Filter from './Filter/Filter';
 import ContactsList from './ContactsList/ContactsList';
-import styled from 'styled-components';
 
 class App extends Component {
   state = {
@@ -58,12 +59,13 @@ class App extends Component {
 
     return (
       <DivApp>
+        <H2>Phonebook</H2>
         <Form onSubmit={this.addContact} />
 
+        <ContactsH2>Contacts</ContactsH2>
+        <Filter value={filter} onChange={this.onFilterChange} />
         <ContactsList
           contacts={filteredContacts}
-          filter={filter}
-          onChange={this.onFilterChange}
           onDelete={this.onDeleteContact}
         />
       </DivApp>
@@ -77,4 +79,16 @@ const DivApp = styled.div`
   margin-left: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
+`;
+
+export const H2 = styled.h2`
+  color: darkgreen;
+  font-size: 28px;
+  margin-top: 0;
+`;
+
+const ContactsH2 = styled.h2`
+  margin-top: 0;
+  font-size: 24px;
+  color: teal;
 `;

@@ -1,30 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Filter from '../Filter/Filter';
-import { Wrapper, H2, Ul, Li, P, Span, ListBtn } from './ContactsList.styled';
+import ContactItem from '../ContactItem/ContactItem';
+import { Wrapper, Ul } from './ContactsList.styled';
 
-const ContactsList = ({ contacts, filter, onChange, onDelete }) => (
+const ContactsList = ({ contacts, onDelete }) => (
   <Wrapper>
-    <H2>Contacts</H2>
-    <Filter value={filter} onChange={onChange} />
     <Ul>
-      {contacts.map(({ id, name, number }) => (
-        <Li key={id}>
-          <P>
-            <Span>{name}</Span>: {number}
-          </P>
-          <ListBtn type="button" onClick={() => onDelete(id)}>
-            Delete
-          </ListBtn>
-        </Li>
-      ))}
+      <ContactItem contacts={contacts} onDelete={onDelete} />
     </Ul>
   </Wrapper>
 );
-
-ContactsList.propTypes = {
-  contacts: PropTypes.arrayOf(PropTypes.string).isRequired,
-  filter: PropTypes.string.isRequired,
-};
 
 export default ContactsList;

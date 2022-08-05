@@ -3,14 +3,9 @@ import styled from 'styled-components';
 export const FormWrapper = styled.div`
   width: 400px;
   padding: 10px;
+  margin-bottom: 10px;
   background-color: rgba(130, 120, 210, 0.3);
   border-radius: 4px;
-`;
-
-export const H2 = styled.h2`
-  color: darkgreen;
-  font-size: 28px;
-  margin-top: 0;
 `;
 
 export const FormDiv = styled.form`
