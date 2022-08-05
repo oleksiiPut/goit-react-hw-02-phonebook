@@ -3,9 +3,14 @@ import { nanoid } from 'nanoid';
 import { FormWrapper, FormDiv, FormBtn, Label, Input } from './Form.styled';
 
 class Form extends Component {
-  state = {
+  static defaultProps = {
     name: '',
     number: '',
+  };
+
+  state = {
+    name: this.props.name,
+    number: this.props.number,
   };
 
   nameInputId = nanoid();
