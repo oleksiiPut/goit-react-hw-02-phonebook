@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import { FormWrapper, FormDiv, FormBtn, Label, Input } from './Form.styled';
 
 class Form extends Component {
-  static defaultProps = {
-    name: '',
-    number: '',
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
   };
 
   state = {
-    name: this.props.name,
-    number: this.props.number,
+    name: '',
+    number: '',
   };
 
   nameInputId = nanoid();
